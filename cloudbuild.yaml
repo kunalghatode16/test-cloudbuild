@@ -1,3 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'testing-push', '--source=.']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - './deploy.sh'
