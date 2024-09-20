@@ -1,7 +1,14 @@
 
 #!/bin/bash
 # Check which folder is being deployed
-if [ "$1" == "." ]; then
+  gcloud functions deploy function-1 \
+    --runtime python311 \
+    --trigger-http \
+    --source= .
+    --region=us-central1
+
+<<com
+ if [ "$1" == "." ]; then
   gcloud functions deploy function-1 \
     --runtime python311 \
     --trigger-http \
@@ -23,4 +30,4 @@ else
   echo "Unknown function. Exiting."
   exit 1
 fi
-
+com
