@@ -4,7 +4,19 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
+  # Step to make deploy.sh executable
+  - name: 'ubuntu'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'chmod +x ./deploy.sh'
+steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args:
       - './deploy.sh'
+
+timeout: '600s'
+
+
+      
