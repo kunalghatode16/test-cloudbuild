@@ -4,6 +4,6 @@
 gcloud functions deploy function-1 \
     --runtime python311 \
     --trigger-http \
-    --source= .
+    --source=cicd \
     --region=us-central1
 
